@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# Chrome extension build artifacts
+*.zip
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Node (future-proofing)
+node_modules/
