@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Cost Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Focus Cost Tracker</h1>
+
+    <!-- Primary Tab Section -->
+    <section class="section">
+      <h2>Primary Tab</h2>
+      <button id="setPrimaryBtn" class="btn btn-primary">Set Current Tab as Primary</button>
+      <div id="primaryTabInfo" class="info-box">
+        <div id="primaryTabDisplay">Not set</div>
+      </div>
+    </section>
+
+    <!-- Allowed Tabs Section -->
+    <section class="section">
+      <h2>Allowed Tabs</h2>
+      <div class="button-row">
+        <button id="addCurrentTabBtn" class="btn btn-secondary">Add Current Tab</button>
+        <button id="removeCurrentTabBtn" class="btn btn-danger-outline">Remove Current Tab</button>
+      </div>
+      <div id="allowedTabsList" class="allowed-list"></div>
+    </section>
+
+    <!-- Allowed Domains Section -->
+    <section class="section">
+      <h2>Allowed Domains</h2>
+      <div class="input-row">
+        <input type="text" id="domainInput" placeholder="e.g., chatgpt.com">
+        <button id="addDomainBtn" class="btn btn-secondary">Add</button>
+      </div>
+      <div id="allowedDomainsList" class="allowed-list"></div>
+    </section>
+
+    <!-- Session Controls Section -->
+    <section class="section">
+      <h2>Session Controls</h2>
+      <div class="button-group">
+        <button id="startSessionBtn" class="btn btn-success">Start Session</button>
+        <button id="stopSessionBtn" class="btn btn-danger" disabled>Stop Session</button>
+      </div>
+      <div class="lock-toggle">
+        <label>
+          <input type="checkbox" id="lockEnabledCheckbox">
+          Enable Focus Lock
+        </label>
+      </div>
+    </section>
+
+    <!-- Live Stats Section -->
+    <section id="liveStatsSection" class="section" style="display: none;">
+      <h2>Live Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Duration:</span>
+          <span id="elapsedTime" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Focused Time:</span>
+          <span id="focusedTime" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Away Time:</span>
+          <span id="awayTime" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Switches:</span>
+          <span id="switchCount" class="stat-value">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Last Session Summary Section -->
+    <section id="lastSessionSection" class="section" style="display: none;">
+      <h2>Last Session Summary</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Duration:</span>
+          <span id="lastDuration" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Focused Time:</span>
+          <span id="lastFocusedTime" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Away Time:</span>
+          <span id="lastAwayTime" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Switches:</span>
+          <span id="lastSwitches" class="stat-value">0</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

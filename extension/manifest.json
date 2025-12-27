@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Cost Tracker",
+  "version": "1.0.0",
+  "description": "Track tab switches and time away from your primary task during focus sessions",
+  "permissions": [
+    "tabs",
+    "storage",
+    "idle"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Focus Cost Tracker"
+  }
+}
